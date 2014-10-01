@@ -39,21 +39,11 @@ public class TestEmbedExe {
         }
     }
     
-    public TestEmbedExe() {
-        URL url = getClass().getResource("simlib_test.exe");
-        File dest = new File("../temp/");
-        //FileUtils.copyURLtoFile(url, dest);
-    }
-    
     private static void runFile(String filename) throws IOException {
         Process p = Runtime.getRuntime().exec(filename);
     }
     
-    private static void copyFileOutOfJar() throws FileNotFoundException, IOException {
-        //URL inputUrl = getClass().getResource("/testembedexe/simlib_test.exe");
-        //File dest = new File("simlib_test.exe");
-        //FileUtils 
-
+    private static void copyFileOutOfJar() throws FileNotFoundException, IOException {  
         InputStream stream = TestEmbedExe.class.getResourceAsStream("/testembedexe/simlib_test.exe");
         
         if (stream == null) {
@@ -71,20 +61,6 @@ public class TestEmbedExe {
         
         stream.close();
         resStreamOut.close();
-        
-        
-        
-        
-        //InputStream is = getClass().getResourceAsStream(filename);
-        //Path inPath = Paths.get(filename);
-        //Path outPath = Paths.get("temp/" + filename);
-        //byte[] data = Files.readAllBytes(inPath);
-        
-        //OutputStream os = new FileOutputStream(new File("temp/" + filename));
-        
-        //Files.copy(inPath, outPath);
-        
-        //os.write(data);
     }
     
 }
