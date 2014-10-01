@@ -1,0 +1,117 @@
+Multiteller bank with separate queues & jockeying
+
+Number of tellers               4 to 10
+
+Mean interarrival time      1.000 minutes
+
+Mean service time           4.500 minutes
+
+Bank closes after           8.000 hours
+
+
+
+
+
+With 4 tellers, average number in queue =     51.319
+
+Delays in queue, in minutes:
+
+ sampst                         Number
+variable                          of
+ number       Average           values          Maximum          Minimum
+________________________________________________________________________
+
+    1         63.2229          501.000          156.363         0.000000 
+________________________________________________________________________
+
+
+
+
+With 5 tellers, average number in queue =      2.441
+
+Delays in queue, in minutes:
+
+ sampst                         Number
+variable                          of
+ number       Average           values          Maximum          Minimum
+________________________________________________________________________
+
+    1         2.48149          483.000          21.8873         0.000000 
+________________________________________________________________________
+
+
+
+
+With 6 tellers, average number in queue =      0.718
+
+Delays in queue, in minutes:
+
+ sampst                         Number
+variable                          of
+ number       Average           values          Maximum          Minimum
+________________________________________________________________________
+
+    1        0.763756          467.000          16.5103         0.000000 
+________________________________________________________________________
+
+
+
+
+With 7 tellers, average number in queue =      0.179
+
+Delays in queue, in minutes:
+
+ sampst                         Number
+variable                          of
+ number       Average           values          Maximum          Minimum
+________________________________________________________________________
+
+    1        0.176180          493.000          6.97122         0.000000 
+________________________________________________________________________
+
+
+
+
+With 8 tellers, average number in queue =      0.183
+
+Delays in queue, in minutes:
+
+ sampst                         Number
+variable                          of
+ number       Average           values          Maximum          Minimum
+________________________________________________________________________
+
+    1        0.187945          478.000          7.69887         0.000000 
+________________________________________________________________________
+
+
+
+
+With 9 tellers, average number in queue =      0.003
+
+Delays in queue, in minutes:
+
+ sampst                         Number
+variable                          of
+ number       Average           values          Maximum          Minimum
+________________________________________________________________________
+
+    1      0.00274060          456.000          1.08342         0.000000 
+________________________________________________________________________
+
+
+
+
+With10 tellers, average number in queue =      0.024
+
+Delays in queue, in minutes:
+
+ sampst                         Number
+variable                          of
+ number       Average           values          Maximum          Minimum
+________________________________________________________________________
+
+    1       0.0227268          521.000          3.98755         0.000000 
+________________________________________________________________________
+
+

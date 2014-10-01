@@ -1,0 +1,27 @@
+Multiteller bank with separate queues & jockeying
+
+Number of tellers               0 to  0
+
+Mean interarrival time      0.000 minutes
+
+Mean service time           0.000 minutes
+
+Bank closes after           0.000 hours
+
+
+
+
+
+With 0 tellers, average number in queue =      0.000
+
+Delays in queue, in minutes:
+
+ sampst                         Number
+variable                          of
+ number       Average           values          Maximum          Minimum
+________________________________________________________________________
+
+    1        0.000000         0.000000    -1.00000E+030     1.00000E+030 
+________________________________________________________________________
+
+
