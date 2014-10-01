@@ -13,6 +13,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.logging.Level;
@@ -32,19 +33,30 @@ public class TestEmbedExe {
     public static void main(String[] args) {
         TestEmbedExe testEmbedExe = new TestEmbedExe();
         try {
-            copyFileOutOfJar();
-            runFile("simlib_test.exe");
+            copyFileOutOfJar("simlib_test.exe");
+            copyFileOutOfJar("mtbank.in");
+            System.out.println(runFile("simlib_test.exe"));
+            //System.in.read();
+            deleteFile("simlib_test.exe");
+            deleteFile("mtbank.in");
+            
         } catch (IOException ex) {
+            Logger.getLogger(TestEmbedExe.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InterruptedException ex) {
             Logger.getLogger(TestEmbedExe.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    private static void runFile(String filename) throws IOException {
-        Process p = Runtime.getRuntime().exec(filename);
+    private static int runFile(String filename) throws IOException, InterruptedException {
+        return Runtime.getRuntime().exec(filename).waitFor();
     }
     
-    private static void copyFileOutOfJar() throws FileNotFoundException, IOException {  
-        InputStream stream = TestEmbedExe.class.getResourceAsStream("/testembedexe/simlib_test.exe");
+    private static void deleteFile(String filename) throws NoSuchFileException, IOException {
+        Files.deleteIfExists(Paths.get(filename));
+    }
+    
+    private static void copyFileOutOfJar(String filename) throws FileNotFoundException, IOException {  
+        InputStream stream = TestEmbedExe.class.getResourceAsStream("/testembedexe/" + filename);
         
         if (stream == null) {
             // exception for empty stream
@@ -54,7 +66,7 @@ public class TestEmbedExe {
         int readBytes;
         byte[] buffer = new byte[4096];
         
-        resStreamOut = new FileOutputStream(new File("simlib_test.exe"));
+        resStreamOut = new FileOutputStream(new File(filename));
         while ((readBytes = stream.read(buffer)) > 0) {
             resStreamOut.write(buffer, 0, readBytes);
         }
